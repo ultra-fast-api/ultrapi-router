@@ -11,7 +11,7 @@ trait RequestTrait
 
     public function getHeader(string $name): array
     {
-        return \array_key_exists($name, $this->headers) ? $this->headers[$name] : '';
+        return \array_key_exists($name, $this->headers) ? \explode(',', $this->headers[$name]) : [];
     }
 
     public function getHeaderLine(string $name): string
